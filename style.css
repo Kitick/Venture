@@ -1,0 +1,215 @@
+:root{
+	--main: #ffffff;
+	--second: #808080;
+	--third: #001C72;
+	--fourth: #dddddd;
+	--fifth: #edcd1f;
+}
+
+html, body {
+	width: 100%;
+	background: var(--main);
+	margin: 0 ;
+	font-family: "Raleway";
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	padding: 0;
+	overflow-x: hidden;
+	scroll-behavior: smooth;
+	user-select: none;
+}
+/* Custom Scrollbar CSS*/
+::-webkit-scrollbar {
+	width: 16px;
+}
+::-webkit-scrollbar-thumb {
+	background: var(--third);
+	border-radius: 2px;
+	transition: 0.5s;
+}
+::-webkit-scrollbar-thumb:hover{
+	background: var(--fifth);
+}
+/*==*/
+a{
+	transition: 0.5s;
+}
+a:link{
+	color: var(--fifth);
+}
+a:hover{
+	color: var(--fourth);
+}
+a:visited{
+	color: var(--second);
+}
+.header{
+	display: flex;
+}
+.halfone{
+	display: flex;
+	flex: 1;
+	justify-content: center; /* align horizontal */
+	align-items: center; /* align vertical */
+}
+.logo{
+	flex: 1;
+	width: 100%;
+	height: 150px;
+	margin: auto;
+	object-fit: contain;
+	padding: auto;
+}
+.halftwo{
+	display: flex;
+	flex: 1;
+}
+button{
+	outline: none;
+	border: none;
+	flex: 1;
+	padding: 15px;
+	font-family: "Raleway";
+	transition: 0.5s;
+}
+button:hover{
+	background: var(--third);
+	color: var(--main);
+}
+/*==*/
+main{
+	display: flex;
+	justify-content: center;
+	min-height: 750px;
+	height: 100%;
+	background: url("Assets/Main.gif") no-repeat center / cover;
+	
+}
+.overlay{
+	width: 100%;
+	backdrop-filter: blur(5px);
+	mix-blend-mode: lighten;
+}
+.text{
+	background-color: var(--main);
+	font-size: 3vw; /* Responsive font size */
+	font-weight: bold;
+	margin: 0 auto; /* Center the text container */
+	padding: 10px;
+	width: 50%;
+	text-align: center; /* Center text */
+	position: absolute; /* Position text */
+	top: 50%; /* Position text in the middle */
+	left: 50%; /* Position text in the middle */
+	transform: translate(-50%, -50%); /* Position text in the middle */
+	mix-blend-mode: screen; /* This makes the cutout text possible */
+}
+.container{
+	display: flex;
+	flex-direction: column;
+	padding: 50px;
+	margin: 0px 15%;
+	justify-content: center;
+	background: var(--main);
+}
+section{
+	width: 100%;
+	min-height: 25vh;
+	justify-content: center;
+	text-align: center;
+	font-size: 1.25em;
+	display: flex;
+	flex-direction: column;
+}
+section h1{
+	color: var(--third);
+}
+.gallery{
+	display: grid;
+	grid-gap: 25px;
+	width: 100%;
+	justify-content: center;
+	height: fit-content;
+	padding: 10px;
+}
+.one{
+	grid-template-columns: auto auto auto;
+}
+.two{
+	grid-template-columns: repeat(2, 1fr);
+	/*padding: 0 50px 0 50px;*/
+}
+
+.infobar{
+	background: var(--fifth);
+	display: flex;
+	margin: 10px;
+	flex-wrap: wrap;
+	width: 100vw;
+	margin-left: 50%;
+	transform: translate(-50%);
+}
+.middle{
+	font-size: 3em;
+	font-weight: bold;
+}
+.item{
+	flex: 1;
+	text-align: center;
+}
+.item .upper{
+	font-size: 2em;
+}
+.item .lower{
+	font-size: 1.5em;
+}
+.card{
+	flex: 1;
+	background: var(--fourth);
+	display: flex;
+	flex-direction: column;
+	border-radius: 5px;
+}
+.upper, .lower{
+	padding: 5px;
+	margin: 0;
+}
+.upper img{
+	width: 250px;
+	height: 250px;
+	border-radius: 5px;
+	object-fit: cover;
+}
+.two .upper img{
+	width: 100%;
+	height: auto;
+	aspect-ratio: 1 / 1;
+	object-fit: cover;
+}
+footer{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+	padding: 10px;
+	width: 100%;
+	background: var(--second);
+}
+@media screen and (max-width: 1200px){
+	.upper img{
+		object-fit: cover;
+	}
+	.container{
+		margin: 0 0px;
+	}
+	.gallery{
+		grid-template-columns: auto;
+	}
+	.card{
+		object-fit: scale-down;
+	}
+	.header{
+		flex-direction: column;
+	}
+}
